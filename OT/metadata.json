@@ -1,0 +1,7 @@
+{
+  "name": "OceanTrack DERC 0.2.8",
+  "description": "A professional dark-themed production management system for scallop (tallo) lots, featuring real-time analytics, DERC tracking, and automated yield calculations.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}

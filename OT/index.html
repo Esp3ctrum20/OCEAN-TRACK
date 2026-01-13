@@ -1,0 +1,97 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OceanTrack DERC</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; transition: background-color 0.3s ease, color 0.3s ease; }
+        
+        /* Focus Management: High Visibility for Keyboard Users */
+        :focus-visible {
+            outline: none;
+            box-shadow: 0 0 0 2px #4f46e5, 0 0 0 4px rgba(79, 70, 229, 0.2);
+            border-radius: 8px;
+        }
+
+        /* PROTOCOLO AURA TÁCTICA: Resaltado ultra-claro para botones en Zero-Mouse */
+        button[data-jump-btn]:focus-visible,
+        button[data-header-btn]:focus-visible,
+        button[data-type="add-talla"]:focus-visible,
+        button[data-type="trash"]:focus-visible,
+        button[data-toolbar-btn="true"]:focus-visible {
+            outline: none !important;
+            border-color: #6366f1 !important;
+            box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.2), 0 0 25px rgba(99, 102, 241, 0.7) !important;
+            transform: scale(1.08);
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            z-index: 150;
+            position: relative;
+        }
+
+        /* Ajuste para modo Pearl (Claro) */
+        .pearl-theme button[data-jump-btn]:focus-visible,
+        .pearl-theme button[data-header-btn]:focus-visible,
+        .pearl-theme button[data-type="add-talla"]:focus-visible,
+        .pearl-theme button[data-type="trash"]:focus-visible,
+        .pearl-theme button[data-toolbar-btn="true"]:focus-visible {
+            box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.15), 0 0 20px rgba(79, 70, 229, 0.4) !important;
+            background-color: #eef2ff !important;
+            color: #4f46e5 !important;
+        }
+
+        /* Scrollbar Dinámico */
+        .pearl-theme ::-webkit-scrollbar-track { background: #f3f4f6; }
+        .pearl-theme ::-webkit-scrollbar-thumb { background: #d1d5db; border-radius: 4px; border: 2px solid #f3f4f6; }
+        .pearl-theme ::-webkit-scrollbar-thumb:hover { background: #9ca3af; }
+        
+        ::-webkit-scrollbar { width: 8px; height: 8px; }
+        ::-webkit-scrollbar-track { background: #18181b; }
+        ::-webkit-scrollbar-thumb { background: #3f3f46; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #52525b; }
+        
+        .custom-scrollbar { scrollbar-width: thin; }
+        
+        /* Ocultar flechas de control en inputs numéricos (Keyboard focus only) */
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+        input[type=number] {
+            -moz-appearance: textfield;
+        }
+
+        /* Utility para el Light Mode */
+        .pearl-theme {
+            --bg-base: #f3f4f6;
+            --bg-card: #ffffff;
+            --text-main: #09090b;
+            --text-sub: #71717a;
+            --border: #e4e4e7;
+        }
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.2.3",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "lucide-react": "https://esm.sh/lucide-react@^0.562.0",
+    "recharts": "https://esm.sh/recharts@^3.6.0",
+    "@google/genai": "https://esm.sh/@google/genai@^1.34.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body class="antialiased overflow-hidden">
+    <div id="root"></div>
+<script type="module" src="/index.tsx"></script>
+</body>
+</html>
